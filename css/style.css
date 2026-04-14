@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background: #f5f4f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+  /* PC 브라우저에서 상하 여백을 충분히 주어 중앙에 배치된 느낌을 줌 */
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wrap {
+  /* PC 최적화 핵심: 너비를 500px~600px로 제한하여 모바일 앱 같은 느낌의 UI 구성 */
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 24px; /* PC 가독성을 위해 약간 키움 */
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  text-align: center; /* 제목 중앙 정렬 */
+}
+
+.page-sub {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 2.5rem;
+  text-align: center; /* 부제목 중앙 정렬 */
+}
+
+/* 카드 디자인 */
+.card {
+  background: #fff;
+  border-radius: 16px; /* 더 부드러운 곡선 */
+  border: 1px solid #e8e6e0;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* PC에서 입체감을 주는 그림자 추가 */
+}
+
+.section-label {
+  font-size: 11px;
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* 기관 버튼 */
+.org-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.org-btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #444;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.org-btn:hover {
+  background: #f5f4f0;
+  border-color: #bbb;
+}
+
+.org-btn.active {
+  background: #eeedfe;
+  border-color: #7f77dd;
+  color: #3c3489;
+  font-weight: 600;
+}
+
+.org-btn.all-btn.active {
+  background: #e1f5ee;
+  border-color: #1d9e75;
+  color: #085041;
+  font-weight: 600;
+}
+
+.org-divider {
+  width: 1px;
+  height: 28px;
+  background: #e0ddd6;
+  margin: 0 2px;
+  align-self: center;
+}
+
+/* 회원 영역 */
+.member-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.member-count {
+  font-size: 12px;
+  color: #888;
+}
+
+.toggle-all {
+  font-size: 12px;
+  color: #534ab7;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.toggle-all:hover {
+  text-decoration: underline;
+}
+
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.member-list::-webkit-scrollbar {
+  width: 4px;
+}
+.member-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.member-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fafaf8;
+  border: 1px solid #ece9e2;
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+}
+
+.member-row:hover {
+  border-color: #bbb;
+  background: #f5f4f0;
+}
+.member-row.absent {
+  opacity: 0.4;
+}
+
+.check {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.12s;
+}
+
+.check.on {
+  background: #534ab7;
+  border-color: #534ab7;
+}
+
+.check svg {
+  width: 10px;
+  height: 10px;
+}
+
+.member-name {
+  font-size: 14px;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.badge-absent {
+  font-size: 11px;
+  color: #999;
+  background: #ece9e2;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.badge-org {
+  font-size: 11px;
+  color: #534ab7;
+  background: #eeedfe;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.empty-hint {
+  color: #aaa;
+  font-size: 13px;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* 뽑기 버튼 */
+.draw-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  background: #534ab7;
+  color: #eeedfe;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 1rem;
+}
+
+.draw-btn:hover:not(:disabled) {
+  background: #3c3489;
+}
+
+.draw-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* 결과 */
+.result-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8e6e0;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  display: none;
+}
+
+.result-label {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.result-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: #3c3489;
+  min-height: 50px;
+  transition: transform 0.1s;
+}
+
+.result-name.rolling {
+  animation: roll 0.08s infinite alternate;
+}
+
+@keyframes roll {
+  from {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.result-org {
+  font-size: 13px;
+  color: #999;
+  margin-top: 6px;
+}
+
+.trophy {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
