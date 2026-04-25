@@ -10,28 +10,30 @@
   <body>
     <div class="wrap">
       <h1 class="page-title">🏓 탁구대회 랜덤 뽑기</h1>
-      <p class="page-sub">전체 또는 기관을 선택하고 참석 여부를 설정한 후 뽑기를 시작하세요</p>
 
-      <!-- 기관 선택 -->
-      <div class="card">
-        <p class="section-label">기관 선택</p>
-        <div class="org-grid" id="orgGrid"></div>
-      </div>
+      <div class="layout">
+        <!-- 좌측 -->
+        <div class="left-panel">
+          <div class="card">
+            <p class="section-label title-style">기관 선택</p>
+            <div class="org-grid" id="orgGrid"></div>
+          </div>
 
-      <!-- 회원 목록 -->
-      <div class="card" id="memberCard">
-        <p class="empty-hint">기관을 선택해주세요</p>
-      </div>
+          <div class="card" id="memberCard">
+            <p class="empty-hint">기관을 선택해주세요</p>
+          </div>
+        </div>
 
-      <!-- 뽑기 버튼 -->
-      <button class="draw-btn" id="drawBtn" disabled onclick="startDraw()">🎲 뽑기 시작</button>
-
-      <!-- 결과 -->
-      <div class="result-card" id="resultCard">
-        <div class="trophy" id="trophy" style="display: none">🏆</div>
-        <p class="result-label">선정된 회원</p>
-        <div class="result-name" id="resultName"></div>
-        <div class="result-org" id="resultOrg"></div>
+        <!-- 우측 -->
+        <div class="right-panel">
+          <div class="result-card" id="resultCard">
+            <div class="trophy" id="trophy">🏓</div>
+            <p class="result-label">선정된 회원</p>
+            <div class="result-name" id="resultName"></div>
+            <div class="result-org" id="resultOrg"></div>
+          </div>
+          <button class="draw-btn" id="drawBtn" disabled onclick="startDraw()">🎲 뽑기 시작</button>
+        </div>
       </div>
     </div>
 
